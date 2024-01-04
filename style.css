@@ -1,0 +1,240 @@
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+
+/* UNIVERSAL RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* GENERAL STYLES */
+html{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+input[type="text"]{
+    font-family: inherit;
+}
+button{
+    cursor: pointer;
+    font-family: inherit;
+}
+
+body{
+    background-color: #D3D3D3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.holdContainer{
+    max-width: 400px;
+    background-color: white;
+    box-shadow: 0px 5px 5px black;
+}
+
+header{
+    display: flex;
+    justify-content: center center;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+}
+
+.search{
+    padding: 0.3rem;
+    border: none;
+    outline: none;
+    background-color: #eeee;
+}
+
+.filter{
+    padding: 0.3rem 1rem;
+    border: none;
+    outline: none;
+    background-color: blue;
+    color: white;
+}
+
+
+.favContainer{
+    padding: 0.5rem;
+    background-color: rgb(236, 227, 236);
+}
+
+h3{
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.favmeals{
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+    padding: 0;
+    flex-wrap: wrap;
+    
+}
+
+.favmeals li{
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+.clear{
+    position: absolute;
+    top:0px;
+    right: 0px;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background-color: red;
+    color: black;
+    cursor: pointer;
+}
+
+.favmeals li .clear:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.favmeals img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.favmeals span{
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+
+.meal{
+    padding: 0.5rem;
+    box-shadow: 0px 5px 5px black;
+    position: relative;
+}
+
+.meal .random{
+    position: absolute;
+    background-color: white;
+    top: 15px;
+    left: 15px;
+    font-size: 0.7rem;
+    padding: 0.2rem;
+}
+
+.mealHeader img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.mealBody{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+
+}
+
+.mealBody h4{
+    font-size: 0.9rem;
+}
+
+.mealBody button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.active{
+    background-color: white;
+}
+
+.recipe{
+    background-color: blue;
+    color: white;
+    border: none;
+    outline: none;
+    box-shadow: 0px 3px 3px black;
+    cursor: pointer;
+}
+.recipeInfo{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.521);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 2rem;
+   
+    z-index: 1;
+
+}
+
+.mealinfo{
+    max-width: 400px;
+    background-color: white;
+    position: relative;
+    height: 600px;
+    overflow-y: scroll;
+    
+}
+
+
+.imgdiv img{
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    padding: 1rem;
+    
+}
+
+.popup{
+    position: absolute;
+    right: 0;
+    padding: 0.3rem;
+    background-color: blue;
+    color: red;
+    border: none;
+    outline: none;
+    box-shadow: 0px 3px 3px black;
+}
+.mealinfo h2{
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.mealinfo p{
+    padding: 0.5rem;
+    box-shadow: 0px 5px 5px black;
+}
+
+.mealinfo ul{
+    list-style-type: none;
+    padding: 0.5rem;
+}
+
+.hidden{
+    display: none;
+}
+
+
+
+
+
