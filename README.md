@@ -13,9 +13,9 @@ This project features a simple, interactive, and dynamic recipe app created usin
 
 ## Screenshots
 1. Screenshot1
-<img src="screenshots/screenshot1.PNG" width="350px">
+<img src="screenshots/screenshot1.PNG" width="250px">
 2. Screenshot2
-<img src="screenshots/screenshot2.PNG" width="350px">
+<img src="screenshots/screenshot2.PNG" width="250px">
 3. Screenshot3
 <img src="screenshots/screenshot3.PNG" width="350px">
 4. Screenshot4
@@ -53,6 +53,5 @@ To contribute to the project or make modifications, follow these steps:
 - **Hosea Nganga**
 
 Feel free to use, modify, and contribute to this Recipe App project!
-Please adjust this readme file to include a table of contents with a screenshot section.
 
 
