@@ -1,240 +1,287 @@
 /* IMPORT FONT */
-@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko&display=swap");
 
-
-/* UNIVERSAL RESET */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: lightgrey;
 }
 
-
-/* GENERAL STYLES */
-html{
-    font-family: 'Kdam Thmor Pro', sans-serif;
+:root {
+  /* COLORS */
+  --PRIMARYBACKGROUNDCOLOR: white;
+  --PRIMARYCOLOR: black;
+  --FONTFAMILY: "Poppins", sans-serif;
+  --BODYBACKGROUNDCOLOR: rgb(243, 225, 255);
 }
 
-img{
-    max-width: 100%;
+body {
+  font-family: var(--FONTFAMILY);
+  background-color: var(--BODYBACKGROUNDCOLOR);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
 }
 
-input[type="text"]{
-    font-family: inherit;
-}
-button{
-    cursor: pointer;
-    font-family: inherit;
-}
-
-body{
-    background-color: #D3D3D3;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
+.recipeGeneratorContainer {
+  max-width: 400px;
+  max-height: auto;
+  box-shadow: 0px 5px 5px black;
+  background-color: white;
+  border-radius: 10px;
 }
 
-.holdContainer{
-    max-width: 400px;
-    background-color: white;
-    box-shadow: 0px 5px 5px black;
+.searchFoodForm {
+  padding: 1rem;
+  text-align: center;
 }
 
-header{
-    display: flex;
-    justify-content: center center;
-    flex-wrap: wrap;
-    padding: 0.5rem;
+.searchFoodForm input {
+  border: none;
+  background-color: lightgrey;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  color: black;
+  font-size: 1.1rem;
 }
 
-.search{
-    padding: 0.3rem;
-    border: none;
-    outline: none;
-    background-color: #eeee;
+.searchFoodForm button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  align-items: center;
+}
+.searchFoodForm i {
+  transform: translateY(0.3rem);
+  margin-inline: 0.6rem;
 }
 
-.filter{
-    padding: 0.3rem 1rem;
-    border: none;
-    outline: none;
-    background-color: blue;
-    color: white;
+.fa-magnifying-glass {
+  font-size: 25px;
+  color: lightgrey;
 }
 
-
-.favContainer{
-    padding: 0.5rem;
-    background-color: rgb(236, 227, 236);
+.favoriteFoodContainer {
+  background-color: var(--BODYBACKGROUNDCOLOR);
+  padding: 1rem;
+  margin-bottom: 0.3rem;
+}
+.favoriteFoodContainer h2 {
+  text-align: center;
+  margin-bottom: 0.6rem;
+  font-weight: 500;
 }
 
-h3{
-    padding: 0.5rem;
-    text-align: center;
+.favoriteFoodContainerFlex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: space-around;
 }
 
-.favmeals{
-    list-style-type: none;
-    display: flex;
-    gap: 1rem;
-    justify-content: space-evenly;
-    padding: 0;
-    flex-wrap: wrap;
-    
+.favoriteFoodDiv {
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+  cursor: pointer;
 }
 
-.favmeals li{
-    display: grid;
-    place-items: center;
-    position: relative;
-}
-.clear{
-    position: absolute;
-    top:0px;
-    right: 0px;
-    opacity: 0;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    background-color: red;
-    color: black;
-    cursor: pointer;
+.favoriteFoodDescription {
+  word-break: break-all;
+  font-size: 0.9rem;
 }
 
-.favmeals li .clear:hover{
-    opacity: 1;
-    cursor: pointer;
+.favoriteFoodContainer img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid white;
+  padding: 0.1rem;
+}
+.randomMealContainer {
+  width: 100%;
+  height: auto;
+  background-color: var(--PRIMARYBACKGROUNDCOLOR);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  position: relative;
+}
+.randomMealContainer h3 {
+  box-shadow: 0px 2px 2px black;
+  width: 170px;
+  height: 30px;
+  font-weight: 400;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  background-color: var(--PRIMARYBACKGROUNDCOLOR);
+  transform: translateY(2rem);
 }
 
-.favmeals img{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    object-fit: cover;
+.displayRandomMealContainer {
+  width: 350px;
+  height: 270px;
+  box-shadow: 0px 4px 4px black;
+  margin-bottom: 1rem;
+  cursor: pointer;
 }
-.favmeals span{
-    font-size: 0.6rem;
-    font-weight: 700;
-}
-
-
-.meal{
-    padding: 0.5rem;
-    box-shadow: 0px 5px 5px black;
-    position: relative;
+.randomMealImageContainer {
+  width: 100%;
+  height: 200px;
 }
 
-.meal .random{
-    position: absolute;
-    background-color: white;
-    top: 15px;
-    left: 15px;
-    font-size: 0.7rem;
-    padding: 0.2rem;
+.randomMealImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.mealHeader img{
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+.randomMealDescriptionContainerFlex {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
-.mealBody{
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem;
-
+.randomMealDescription {
+  font-weight: 800;
 }
 
-.mealBody h4{
-    font-size: 0.9rem;
+.randomMealDescriptionContainerFlex button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-.mealBody button{
-    border: none;
-    outline: none;
-    background-color: transparent;
+.randomMealDescriptionContainerFlex i {
+  font-size: 1.2rem;
 }
 
-.active{
-    background-color: white;
+.viewRecipeBtn {
+  font-size: 1rem;
+  background-color: blue;
+  border: none;
+  outline: none;
+  color: var(--PRIMARYBACKGROUNDCOLOR);
+  padding: 0.25rem 1rem;
+  margin-left: 0.25rem;
+  border-radius: 3px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-.recipe{
-    background-color: blue;
-    color: white;
-    border: none;
-    outline: none;
-    box-shadow: 0px 3px 3px black;
-    cursor: pointer;
-}
-.recipeInfo{
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.521);
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 2rem;
-   
-    z-index: 1;
-
+.is-active {
+  color: red;
 }
 
-.mealinfo{
-    max-width: 400px;
-    background-color: white;
-    position: relative;
-    height: 600px;
-    overflow-y: scroll;
-    
+.deleteFavMeal {
+  width: 18px;
+  height: 18px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: var(--PRIMARYCOLOR);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(10px);
+  display: none;
+  transition: 0.3s ease-in-out;
+  font-size: 0.6rem;
+  font-weight: 400;
+  cursor: pointer;
 }
 
-
-.imgdiv img{
-    object-fit: cover;
-    width: 100%;
-    height: 200px;
-    padding: 1rem;
-    
+.favoriteFoodDiv:hover .deleteFavMeal {
+  display: block;
 }
 
-.popup{
-    position: absolute;
-    right: 0;
-    padding: 0.3rem;
-    background-color: blue;
-    color: red;
-    border: none;
-    outline: none;
-    box-shadow: 0px 3px 3px black;
-}
-.mealinfo h2{
-    padding: 0.5rem;
-    text-align: center;
+.viewRecipeBtn:hover {
+  background-color: green;
 }
 
-.mealinfo p{
-    padding: 0.5rem;
-    box-shadow: 0px 5px 5px black;
+.recipeInfoContainer {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.89);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
 }
 
-.mealinfo ul{
-    list-style-type: none;
-    padding: 0.5rem;
+.recipeInfo {
+  background-color: var(--PRIMARYBACKGROUNDCOLOR);
+  max-width: 600px;
+  width: 100%;
+  min-height: 500px;
+  max-height: 600px;
+  padding: 2rem;
+  overflow-y: scroll;
+  position: relative;
+  transform: translateY(2rem);
+}
+.recipeInfo h1 {
+  text-align: center;
+}
+.recipeInfo img {
+  max-width: 100%;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-.hidden{
-    display: none;
+.recipeInfo ul {
+  list-style-position: inside;
 }
 
+.recipeInfo p {
+  margin-bottom: 1rem;
+}
 
+.recipeInfo li {
+  margin-bottom: 2rem;
+}
 
+.recipeInfo button {
+  border: none;
+  outline: none;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 0.2rem;
+  top: 0;
+  background-color: black;
+  color: white;
+  margin-top: 0.3rem;
+  cursor: pointer;
+}
 
-
+.hidden {
+  display: none;
+}
+@media screen and (max-width: 400px) {
+  .displayRandomMealContainer {
+    width: 280px;
+  }
+  .randomMealContainer h3 {
+    left: 30px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .displayRandomMealContainer {
+    width: 230px;
+  }
+}
